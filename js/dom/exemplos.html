@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RS Start - JS</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" name="nome" id="nome" />
+    <button class="botao">Adicionar</button>
+  </div>
+
+  <div id="app2"></div>
+
+  <div id="app3">
+    <div class="box"></div>
+  </div>
+
+  <script>
+    /* Tradicionais
+    var inputElement = document.getElementById('nome');
+    var inputs = document.getElementsByTagName('input');
+    console.log(inputElement);
+    console.log(inputs); */
+
+    // Com querySelector
+    var inputElement = document.querySelector('input[name=nome]');        
+    var btnElement = document.querySelector('button.botao');
+    btnElement.onclick = function(){
+      var text = inputElement.value;
+      alert(text);
+    }
+
+    // Criando elementos na dom
+    var linkElement = document.createElement('a');
+    linkElement.setAttribute('href', 'https://github.com/mathcard');
+    
+    var textElement = document.createTextNode('Criando elementos na DOM com JS');
+    linkElement.appendChild(textElement);
+
+    var containerElement = document.querySelector('#app2');
+    containerElement.appendChild(linkElement); // removeChild para REMOVER
+
+    // Alterando estilos
+    var boxElement = document.querySelector('.box');
+    console.log(boxElement);
+    boxElement.style.width = '100px';
+    boxElement.style.height = '100px';
+    boxElement.style.backgroundColor = '#f00';
+
+  </script>
+</body>
+</html>
