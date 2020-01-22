@@ -29,6 +29,7 @@
     elementCreate.style.height = '100px';
     elementCreate.style.backgroundColor = '#f00';
     elementCreate.style.marginBottom = '10px';
+    elementCreate.setAttribute('class', 'quadrado');
    
     res.appendChild(elementCreate);
     console.log(elementCreate);
@@ -38,9 +39,8 @@
     }
     
     // Ex02
-  /*  
-    function getRandomColor() {
-      console.log('ok');
+   
+    function getRandomColor() {      
       var letters = "0123456789ABCDEF";
       var color = "#";
       for (var i = 0; i < 6; i++) {
@@ -48,8 +48,16 @@
       }
       return color;      
     }
+    
     var newColor = getRandomColor(); // #E943F0
-  */
+    var quadrado = document.querySelector('.quadrado');
+    
+      quadrado.onclick = function (){
+        quadrado.style.width = '200px';
+      console.log(quadrado);
+      
+    }
+    
     
     // Alterando estilos 
     /*
