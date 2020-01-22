@@ -1,0 +1,3 @@
+Como funciona o indexOf?
+
+Ternario: return (sexo==='M') ? 'Masc' : 'Fem';
