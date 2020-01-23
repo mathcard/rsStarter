@@ -9,66 +9,80 @@
 <body>
   <div id="app">
     <p><b>Ex:01</b>Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
-      vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
-      aparecer na tela.</p><br>   
-    <p><b>Ex:02</b>Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
-      algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:</p> 
-    <button class="botao">Adicionar</button>
-  </div>
-    
-  <script>    
-    // Ex01
-    btnElement = document.querySelector('.botao');
-    btnElement.onclick = function(){
-    
-    var res = document.querySelector('#app');
-    
-    var elementCreate = document.createElement('div');    
-    
-    elementCreate.style.width = '100px';
-    elementCreate.style.height = '100px';
-    elementCreate.style.backgroundColor = '#f00';
-    elementCreate.style.marginBottom = '10px';
-    elementCreate.setAttribute('class', 'quadrado');
-   
-    res.appendChild(elementCreate);
-    console.log(elementCreate);
+      vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve aparecer na tela.</p><br>   
       
-      //var newColor = getRandomColor(); // #E943F0
-      //elementCreate.style.backgroundColor = newColor;
-    }
+      <button id="new">Novo quadrado</button>
+      <div id="squares"></div>
+
+      <p><b>Ex:02</b>Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+      algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:</p> 
     
-    // Ex02
-   
-    function getRandomColor() {      
-      var letters = "0123456789ABCDEF";
-      var color = "#";
+    <p><b>Ex:03</b>Coloque os dados do vetor em uma lista var nomes = ["Diego", "Gabriel", "Lucas"];</p> 
+    
+    <ul></ul>
+
+    <p><b>Ex:04</b>Adicione um novo valor no vetor;</p> 
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>   
+  </div>
+
+  
+  <script> 
+    
+    // Ex01
+    var btnElement = document.getElementById('new');
+    var squaresElement = document.getElementById('squares');
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
       }
-      return color;      
+      return color;
     }
-    
-    var newColor = getRandomColor(); // #E943F0
-    var quadrado = document.querySelector('.quadrado');
-    
-      quadrado.onclick = function (){
-        quadrado.style.width = '200px';
-      console.log(quadrado);
-      
-    }
-    
-    
-    // Alterando estilos 
-    /*
-    var boxElement = document.querySelector('.box');
-    console.log(boxElement);
-    boxElement.style.width = '100px';
-    boxElement.style.height = '100px';
-    boxElement.style.backgroundColor = '#f00';
 
-    var containerElement = document.querySelector('#app2');
-    containerElement.appendChild(linkElement); */// r
+    btnElement.onclick = function () {
+      var square = document.createElement('div');
+
+      square.style.width = '100px';
+      square.style.height = '100px';
+      square.style.backgroundColor = '#F00';
+
+      square.onmouseover = function () {
+        square.style.backgroundColor = getRandomColor();
+      }
+
+      squaresElement.appendChild(square);
+    };  
+
+
+
+
+    // Ex03 e 04
+    var nomes = ['Diego', 'Gabriel', 'Lucas'];
+    var listElement = document.querySelector('ul');
+    var inputElement = document.querySelector('input');
+
+    function addItem(text) {
+      var liElement = document.createElement('li');
+      var textElement = document.createTextNode(text);
+
+      liElement.appendChild(textElement);
+      listElement.appendChild(liElement);
+    }
+
+    function adicionar() {
+      addItem(inputElement.value);
+      inputElement.value = "";
+    }
+
+    for (nome of nomes) {
+      addItem(nome);
+    }
+
+
+
 
   </script>
 </body>
