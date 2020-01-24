@@ -1,3 +1,4 @@
 Como funciona o indexOf?
+Percorre o vetor buscando a posição de um item, de acordo com o conteúdo.
 
 Ternario: return (sexo==='M') ? 'Masc' : 'Fem';

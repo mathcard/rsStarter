@@ -1,0 +1,8 @@
+Iniciando projeto: yarn init
+
+BABEL - Executa comandos do es6+ para os browsers -> criar arquivo .babelrc
+yarn add @babel/cli
+yarn add @babel/preset-env
+yarn add @babel/core
+
+Cria o script: "dev": "babel ./main.js -o ./bundle.js"
