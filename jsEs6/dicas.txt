@@ -8,3 +8,9 @@ yarn add @babel/plugin-proposal-object-rest-spread
 
 Adicionar no baberc: "scripts": [@babel/plugin-proposal-object-rest-spread]
 Cria o script: "dev": "babel ./main.js -o ./bundle.js"
+
+WEBPACK - Permite que vários arquivos sejam interpretados no bundle.
+Alterar o package.json de dependencies para devDependencies
+yarn add webpack webpack-cli -D
+arquivo de configuração: webpack.config.js
+yarn add babel-loader -D
