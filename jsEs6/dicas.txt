@@ -14,3 +14,7 @@ Alterar o package.json de dependencies para devDependencies
 yarn add webpack webpack-cli -D
 arquivo de configuração: webpack.config.js
 yarn add babel-loader -D
+
+yarn add webpack-dev-server -D
+
+ASYNC/AWAIT com Babel
