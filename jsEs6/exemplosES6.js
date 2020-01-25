@@ -1,20 +1,45 @@
 // Classes
-class TodoList{
+
+class List{
     constructor(){
-        this.todos = [];
+        this.data = [];        
     }
 
-    addTodo(){
-        this.todos.push('Novo todo');
-        console.log(this.todos);
+    add(data){
+        this.data.push(data);
+        console.log(this.data);
     }
+}
+
+class TodoList extends List{
+    constructor(){
+        super();
+
+        this.usuario = 'Math';
+    }
+    monstraUsuario(){
+        console.log(this.usuario);
+    }
+
 }
 
 const MinhaLista = new TodoList();
 
 document.getElementById('novotodo').onclick = function(){
-    MinhaLista.addTodo();
+    MinhaLista.add('Novo todo');
 }
+
+MinhaLista.monstraUsuario();
+
+
+// Class Static
+class Matematica{
+    static soma(a, b){
+        return a + b;
+    }
+}
+
+console.log(Matematica.soma(1, 2));
 
 // Variaveis e Constantes
 // Const não pode ser alterada.
@@ -101,4 +126,66 @@ function monstraNome({nome, idade}){
     console.log(nome, idade);
 }
 
-monstraNome(usuario);
+
+
+
+
+// REST - Pegar o resto das propriedades
+const usuarioRest = {
+    nome: 'Matheus',
+    idade: 25,
+    empresa: 'Rocketseat'
+};
+
+const { nome, ...resto } = usuarioRest;
+console.log(nome);
+console.log(resto);
+/*
+const arr = [1, 2, 3, 4];
+const [ a, b, ...c] = arr;
+console.log(a);
+console.log(b);
+console.log(c); */
+
+function somaRest(...params){
+    return params.reduce((total, next) => total + next);
+}
+
+console.log(somaRest(1, 3, 4));
+
+function somaRest2(a, b, ...params){
+    return params;
+}
+
+console.log(somaRest2(1, 3, 4, 5, 6, 7));
+
+// SPREAD - Passa todos os valores de um array
+const arrSpread1 = [1, 2, 3];
+const arrSpread2 = [4, 5, 6];
+
+const arrSpread3 = [...arrSpread1, ...arrSpread2];
+console.log(arrSpread3);
+
+const usuarioSpread = {
+    nome: 'Matheus',
+    idade: 25,
+    empresa: 'Rocketseat'
+};
+
+const usuarioSpread2 = {...usuarioSpread, nome: 'iChangeNameWithSpread'};
+console.log(usuarioSpread);
+console.log(usuarioSpread2);
+
+
+// OBJECT SHORT SYNTAX - 
+//Quando o nome da propriedade é igual ao nome da variavel dentro do objeto
+const nomeOSS = 'Suetham';
+const idadeOSS = '26';
+
+const usuarioOSS = {
+    nomeOSS,
+    idadeOSS,
+    empresa: 'Devs',
+};
+
+console.log(usuarioOSS);

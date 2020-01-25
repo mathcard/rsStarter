@@ -4,5 +4,7 @@ BABEL - Executa comandos do es6+ para os browsers -> criar arquivo .babelrc
 yarn add @babel/cli
 yarn add @babel/preset-env
 yarn add @babel/core
+yarn add @babel/plugin-proposal-object-rest-spread
 
+Adicionar no baberc: "scripts": [@babel/plugin-proposal-object-rest-spread]
 Cria o script: "dev": "babel ./main.js -o ./bundle.js"
