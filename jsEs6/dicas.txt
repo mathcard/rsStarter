@@ -1,4 +1,4 @@
-Iniciando projeto: yarn init
+﻿Iniciando projeto: yarn init
 
 BABEL - Executa comandos do es6+ para os browsers -> criar arquivo .babelrc
 yarn add @babel/cli
@@ -18,3 +18,4 @@ yarn add babel-loader -D
 yarn add webpack-dev-server -D
 
 ASYNC/AWAIT com Babel
+
