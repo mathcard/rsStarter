@@ -2,7 +2,7 @@ import React, { useState, Component } from 'react';
 import Comment from './Comment';
 
 function Post({title}){
-    const [comments, setComments] = useState([{text: 'oi'}]);
+    const [comments, setComments] = useState([{text: ''}]);
     const [newCommentText, setNewCommentText] = useState('');
 
     function handleSubmit(e){
