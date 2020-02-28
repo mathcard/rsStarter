@@ -1,0 +1,10 @@
+Criando projeto
+npm init -y
+
+EXPRESS - Microframework trabalha com rotas e views
+
+Iniciando servidor: node server.js
+
+NODEMON - Reinicia o servidor automaticamente
+
+Instalando MongoDB com Docker
