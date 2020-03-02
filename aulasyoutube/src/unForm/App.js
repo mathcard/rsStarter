@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {Form} from '@unform/web';
 import {Scope} from '@unform/core';
 import * as Yup from 'yup';
 import Input from './components/Form/Input';
+
+// Parei no minuto 41
 
 const initialData = { 
     email: 'mathcardoso.94@gmail.com',
@@ -12,6 +14,7 @@ const initialData = {
 }
 
 function App(){    
+    const [user, setUser] = useState({});
     const formRef = useRef(null);
 
     async function handleSubmit(data, {reset}){
@@ -24,7 +27,7 @@ function App(){
                         .required('O e-mail é obrigatório'),
                 address: Yup.object().shape({
                     city: Yup.string()
-                        .min(3, 'No mínio 3 caracteres')
+                        .min(3, 'No mínimo 3 caracteres')
                         .required('A cidade é obrigatória'),
                 })
             });
@@ -32,11 +35,18 @@ function App(){
             await schema.validate(data, {
                 abortEarly: false,
             })
+            formRef.current.setErrors({});
         console.log(data);
         reset();
         } catch(err){
             if(err instanceof Yup.ValidationError){
-                console.log(err);
+                //console.log(err);
+                const errorMessages = {};
+                err.inner.forEach(error => {
+                    errorMessages[error.path] = error.message;
+                })
+
+                formRef.current.setErrors(errorMessages);
             }
         }                
     }    
@@ -54,6 +64,18 @@ function App(){
             }
         });
     } */
+
+    // SIMULANDO API - Colocando a Initial Data como comentário
+    useEffect(() => {
+        setTimeout(() =>{
+            setUser({
+                name: 'Matheus do Carmo',
+                email: 'mathcardoso.94@gmail.com',
+            })
+        }, 2000);
+    }, [])
+
+
 
     return(
         <div className="App">
