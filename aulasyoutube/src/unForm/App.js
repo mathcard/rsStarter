@@ -14,7 +14,7 @@ const initialData = {
 }
 
 function App(){    
-    const [user, setUser] = useState({});
+    //const [user, setUser] = useState({});
     const formRef = useRef(null);
 
     async function handleSubmit(data, {reset}){
@@ -48,10 +48,8 @@ function App(){
 
                 formRef.current.setErrors(errorMessages);
             }
-        }                
-    }    
-    
-    // VALIDACAO TRADICIONAL
+        }    
+        // VALIDACAO TRADICIONAL
     // if(data.name == ''){ alert('Nome está vazio!') }
                 
     // VALIDACAO UNFORM
@@ -63,25 +61,30 @@ function App(){
                 city: 'A cidade é obrigatória',
             }
         });
-    } */
+    } */            
+    }    
+    
+    
 
-    // SIMULANDO API - Colocando a Initial Data como comentário
+    // SIMULANDO API - ("Desabilitando" InitialData )
     useEffect(() => {
-        setTimeout(() =>{
-            setUser({
+        setTimeout(() => {
+            formRef.current.setData({
                 name: 'Matheus do Carmo',
                 email: 'mathcardoso.94@gmail.com',
+                address: {
+                    city: 'Goiania'
+                }
             })
         }, 2000);
     }, [])
-
-
 
     return(
         <div className="App">
             <h1>Hello World</h1>
             
-            <Form ref={formRef} initialData={initialData} onSubmit={handleSubmit}>
+            {/*<Form ref={formRef} initialData={initialData} onSubmit={handleSubmit}> */}
+            <Form ref={formRef} onSubmit={handleSubmit}>
                 <Input name="name"/>
                 <Input type="email" name="email"/>
                 <Scope path="address">
