@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post';
+import Post from './components/Post';
 
 
 export default class App extends Component {
@@ -8,8 +8,8 @@ export default class App extends Component {
             <div>
                 <h1>Hello World!</h1>
                 <Post title="Aprendendo ReactJs"/>
-                <Post title="ReactJs é Top!"/>
-                <Post title="Em breve mais vídeos"/>
+               {/*  <Post title="ReactJs é Top!"/>
+                <Post title="Em breve mais vídeos"/> */}
            </div>
         );
     }

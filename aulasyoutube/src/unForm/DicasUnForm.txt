@@ -1,0 +1,10 @@
+Instalação:
+yarn add @unform/core @unform/web
+
+Para mobile:
+yarn add @unform/core @unform/mobile
+
+Precisa criar os inputs como components:
+
+YUP - Biblioteca que valida os campos
+yarn add yup
