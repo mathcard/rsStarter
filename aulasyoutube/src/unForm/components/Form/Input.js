@@ -12,7 +12,7 @@ export default function Input({ name, ...rest }){
       path: 'value'
     })
   }, [fieldName, registerField]);
-
+ 
   return(
     <div>
       <input ref={inputRef} defaultValue={defaultValue} {...rest} />

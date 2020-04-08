@@ -1,5 +1,4 @@
 import React, { useState, Component } from 'react';
-import Comment from './Comment';
 import Table from './Table';
 
 function Post({title}){
