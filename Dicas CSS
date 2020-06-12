@@ -1,0 +1,16 @@
+/* Dicas CSS 
+
+Medidas
+px - Layout Fixo
+
+% - Layout
+*/
+
+header{
+	background-color: #7159c1;
+}	
+
+header .container{
+	width: 100%;
+	max-width: 900px;
+}
